@@ -7,7 +7,8 @@ const TodoCard = ({label, status}) => {
                 <h3>{label}</h3>
             </div>
             <div className="card-footer">
-
+                <button>Update</button>
+                <button>Delete</button>
             </div>
         </div>
     )
