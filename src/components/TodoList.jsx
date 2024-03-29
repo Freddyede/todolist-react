@@ -21,6 +21,18 @@ const TodoList = (props) => {
         setTodos(todos);
         setActive(false);
     }
+    
+    const removeTodo = label => {
+        const newTodos = todos.filter((element) => element.label !== label);
+        setTodos(newTodos);
+    }
+
+    const updateTodo = (label, newLabel) => {
+        const newTodos = todos.find(element =>element.label === label)
+        newTodos.label = newLabel;
+        const newTodosEffect = todos.filter(element => element.label !== label);
+        setTodos(newTodosEffect);
+    }
 
 
     return (
@@ -40,7 +52,15 @@ const TodoList = (props) => {
                 }
             </header>
             <main>
-                {todos.map(({label, status}) => (<TodoCard key={label} status={status} label={label}/>))}
+                {todos.map(({label, status}) => (
+                    <TodoCard
+                        key={label}
+                        status={status}
+                        label={label}
+                        removeTodos={(label) => removeTodo(label)}
+                        updateTodos={(label, newLabel) => updateTodo(label, newLabel)}
+                    />
+                ))}
             </main>
         </>
     );
