@@ -1,0 +1,33 @@
+header {
+    background-color: #861616;
+    width: 100vw;
+    height: 50px;
+    display: flex;
+    justify-content: end;
+    & button {
+        background-color: #b71414;
+        margin: auto 15px;
+        height: 40px;
+    }
+    & input {
+        background-color: #b71414;
+        color: #FFFFFF;
+        margin: auto 15px;
+        text-align: center;
+        height: 40px;
+        border-radius: 5px;
+    }
+    button, input {
+        border: none;
+    }
+    input {
+        border: 1px solid white;
+    }
+    & input::placeholder {
+        color: #FFFFFF;
+    }
+}
+
+main {
+    width: 100vw;
+}
